@@ -1,0 +1,25 @@
+
+import java.util.*;
+class Main {
+    public static List<Integer> findDuplicate(int arr[])
+    {
+        Arrays.sort(arr);
+        int n=arr.length-1;
+        List<Integer>l=new ArrayList<>();
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i]==arr[i-1] && (l.isEmpty()|| l.get(l.size()-1)!=arr[i]))
+            {
+                l.add(arr[i]);
+            }
+        }
+        return l;
+        
+    }
+    public static void main(String[] args) {
+        int arr[]={1,3,2,3,2,4,5,4,6,6};
+        List<Integer>l=findDuplicate(arr);
+       System.out.println("Duplicate number is "+l);
+        
+    }
+}
