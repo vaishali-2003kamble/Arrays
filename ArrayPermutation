@@ -1,0 +1,39 @@
+
+import java.util.Arrays;
+class Main {
+    public static void permutaion(int arr[],int left,int right)
+    {
+       
+        if(left==right)
+        {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        
+        for(int i=left;i<=right;i++)
+        {
+            swap(arr,left,i);
+             permutaion(arr,left+1,right);
+            swap(arr,left,i);
+        }
+  
+        
+    }
+     static void swap(int arr[],int left,int i)
+        {
+            int temp=arr[left];
+            arr[left]=arr[i];
+            arr[i]=temp;
+        }
+    public static void main(String[] args) {
+     
+    
+        int arr[]={1,2,3};
+         int left=0;
+        int right=arr.length-1;
+        permutaion(arr,left,right);
+        
+        
+        
+    }
+}
