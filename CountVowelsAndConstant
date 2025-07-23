@@ -1,0 +1,25 @@
+
+
+class Main {
+    public static void main(String[] args) {
+        String s="vaishali";
+        char arr[]=s.toCharArray();
+        int n=arr.length;
+        int vol=0;
+        int con=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]=='a' || arr[i]=='e' || arr[i]=='i' || arr[i]=='o' || arr[i]=='u')
+            {
+                vol++;
+            }
+            else
+            {
+               con++; 
+            }
+        }
+        System.out.println("vowels "+vol);
+         System.out.println("constant "+con);
+        
+    }
+}
